@@ -19,7 +19,7 @@ struct list_node_t {
 
 struct list_t {
 	list_node_t *start;
-	int length;
+	int size;
 };
 
 
@@ -43,35 +43,35 @@ int listEmpty(list_t *list);
 
 
 // 
-void listSize();
+int listSize(list_t *list);
 
 
 // 
-void listInsertionStart();
+void listInsertStart(list_t *list, int element);
 
 
 // 
-void listInsertionEnd();
+void listInsertEnd(list_t *list, int element);
 
 
 // 
-void listInsertionOrded();
+void listInsertInOrder(list_t *list, int element);
 
 
 // 
-void listDeletionStart();
+void listRemoveStart(list_t *list);
 
 
 // 
-void listDeletionEnd();
+void listRemoveEnd(list_t *list);
 
 
 // 
-void listDeletionElement();
+void listRemoveElement(list_t *list, int element);
 
 
 // 
-void listBelong();
+int listIsIn(list_t *list, int element);
 
 
 
