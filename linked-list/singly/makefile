@@ -5,7 +5,7 @@ objects = main.o adt_linked_list.o
 
 
 all: $(objects)
-	gcc $(objects) -o adt_linked_list 
+	gcc $(objects) -o linked_list 
 
 
 main.o: main.c
@@ -21,5 +21,4 @@ clean:
 
 
 purge: clean
-	rm -f adt_linked_list
-
+	rm -f linked_list

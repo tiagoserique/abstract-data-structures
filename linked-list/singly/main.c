@@ -6,5 +6,10 @@
 
 int main(){
 	
+	list_t *list = listCreate();
+
+	listPrint(list);
+
+
 	return 0;
 }
