@@ -52,36 +52,62 @@ int listSize(list_t *list){
 }
 
 
-void listInsertStart(list_t *list, int element){
+int listInsertStart(list_t *list, int element){
+	if ( listEmpty(list) ){
+		list->start = listCreateNode(element);
+		list->size++;
+		return 1;
+	}
 
+	list_node_t *new_element = listCreateNode(element);
+	if ( !new_element )
+		return 0;
+
+	list_node_t *inicio_lista = list->start;
+	list->start = new_element;
+	list->start->next = inicio_lista;
+	list->size++;
+
+	return 1;
 }
 
 
-void listInsertEnd(list_t *list, int element){
+int listInsertEnd(list_t *list, int element){
 
+	return 0;
 }
 
 
-void listInsertInOrder(list_t *list, int element){
+int listInsertInOrder(list_t *list, int element){
 
+	return 0;
 }
 
 
-void listRemoveStart(list_t *list){
+int listRemoveStart(list_t *list){
 
+	return 0;
 }
 
 
-void listRemoveEnd(list_t *list){
+int listRemoveEnd(list_t *list){
 
+	return 0;
 }
 
 
-void listRemoveElement(list_t *list, int element){
+int listRemoveElement(list_t *list, int element){
 
+	return 0;
 }
 
 
 int listIsIn(list_t *list, int element){
+	return 0;
+}
 
+
+int listClear(list_t *list){
+
+	return 0;
 }
