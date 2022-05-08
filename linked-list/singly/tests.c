@@ -29,6 +29,17 @@ void testInsertInOrder(list_t *list){
 void testInsertEnd(list_t *list){
 	printf("============ listInsertEnd ============\n");
 
+	listInsertEnd(list, 20);
+	listPrint(list);
+
+	listInsertEnd(list, 21);
+	listPrint(list);
+	
+	listInsertEnd(list, 22);
+	listPrint(list);
+	
+	listInsertEnd(list, 23);
+	listPrint(list);
 }
 
 

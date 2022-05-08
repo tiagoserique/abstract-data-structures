@@ -12,7 +12,7 @@ int main(){
 
 	// testInsertInOrder(list);
 
-	// testInsertEnd(list);
+	testInsertEnd(list);
 
 	// testRemoveStart(list);
 

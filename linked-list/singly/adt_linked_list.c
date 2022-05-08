@@ -73,8 +73,26 @@ int listInsertStart(list_t *list, int element){
 
 
 int listInsertEnd(list_t *list, int element){
+	if ( listEmpty(list) ){
+		list->start = listCreateNode(element);
+		list->size++;
+		return 1;
+	}
 
-	return 0;
+	list_node_t *new_element = listCreateNode(element);
+	if ( !new_element )
+		return 0;
+
+	list_node_t *inicio_lista = list->start;
+
+	while ( inicio_lista->next != NULL ){
+		inicio_lista = inicio_lista->next;
+	}
+
+	inicio_lista->next = new_element;
+	list->size++;
+
+	return 1;
 }
 
 
