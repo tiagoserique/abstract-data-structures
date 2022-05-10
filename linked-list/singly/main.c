@@ -14,7 +14,7 @@ int main(){
 
 	testInsertEnd(list);
 
-	// testRemoveStart(list);
+	testRemoveStart(list);
 
 	// testRemoveEnd(list);
 

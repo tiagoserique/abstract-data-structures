@@ -46,6 +46,14 @@ void testInsertEnd(list_t *list){
 void testRemoveStart(list_t *list){
 	printf("============ listRemoveStart ============\n");
 
+	listRemoveStart(list);
+	listPrint(list);
+
+	listRemoveStart(list);
+	listPrint(list);
+
+	listRemoveStart(list);
+	listPrint(list);
 }
 
 
