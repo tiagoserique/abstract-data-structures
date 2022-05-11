@@ -16,7 +16,7 @@ int main(){
 
 	testRemoveStart(list);
 
-	// testRemoveEnd(list);
+	testRemoveEnd(list);
 
 	// testRemoveElement(list);
 

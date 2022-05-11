@@ -63,9 +63,9 @@ int listInsertStart(list_t *list, int element){
 	if ( !new_element )
 		return 0;
 
-	list_node_t *inicio_lista = list->start;
+	list_node_t *aux = list->start;
 	list->start = new_element;
-	list->start->next = inicio_lista;
+	list->start->next = aux;
 	list->size++;
 
 	return 1;
@@ -83,13 +83,12 @@ int listInsertEnd(list_t *list, int element){
 	if ( !new_element )
 		return 0;
 
-	list_node_t *inicio_lista = list->start;
+	list_node_t *aux = list->start;
 
-	while ( inicio_lista->next != NULL ){
-		inicio_lista = inicio_lista->next;
-	}
+	while ( aux->next != NULL )
+		aux = aux->next;
 
-	inicio_lista->next = new_element;
+	aux->next = new_element;
 	list->size++;
 
 	return 1;
@@ -111,13 +110,40 @@ int listRemoveStart(list_t *list){
 	list->start = list->start->next;
 	free(aux);
 
+	list->size--;
+
 	return 1;
 }
 
 
 int listRemoveEnd(list_t *list){
+	if ( listEmpty(list) )
+		return 0;
 
-	return 0;
+	list_node_t *prev_aux = list->start;
+	list_node_t *aux;
+
+	if ( prev_aux->next != NULL ){
+		aux = prev_aux->next;
+
+		while ( aux->next != NULL ){
+			prev_aux = aux;
+			aux = aux->next;
+		}
+
+		prev_aux->next = NULL;
+		free(aux);
+		aux = NULL;
+
+	}
+	else {
+		free(prev_aux);
+		list->start = prev_aux = NULL;
+	}
+
+	list->size--;
+
+	return 1;
 }
 
 
