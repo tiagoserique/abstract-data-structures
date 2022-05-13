@@ -80,6 +80,26 @@ void testRemoveEnd(list_t *list){
 void testRemoveElement(list_t *list){
 	printf("============ listRemoveElement ============\n");
 
+	listRemoveElement(list, 20);
+	listPrint(list);
+
+	listRemoveElement(list, 13);
+	listPrint(list);
+
+	listRemoveElement(list, 11);
+	listPrint(list);
+
+	listRemoveElement(list, 12);
+	listPrint(list);
+
+	listRemoveElement(list, 10);
+	listPrint(list);
+
+	listRemoveElement(list, 23);
+	listPrint(list);
+
+	listRemoveElement(list, 30);
+	listPrint(list);
 }
 
 
