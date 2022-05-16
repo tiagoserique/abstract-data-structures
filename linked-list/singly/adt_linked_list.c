@@ -120,26 +120,22 @@ int listRemoveEnd(list_t *list){
 	if ( listEmpty(list) )
 		return 0;
 
-	list_node_t *prev_aux = list->start;
-	list_node_t *aux;
+	list_node_t *prev_aux = NULL;
+	list_node_t *aux = list->start;
 
-	if ( prev_aux->next != NULL ){
-		aux = prev_aux->next;
+	while ( aux->next != NULL ){
+		prev_aux = aux;
+		aux = aux->next;
+	}
 
-		while ( aux->next != NULL ){
-			prev_aux = aux;
-			aux = aux->next;
-		}
-
+	if ( prev_aux != NULL )
 		prev_aux->next = NULL;
-		free(aux);
-		aux = NULL;
+	else 
+		list->start = NULL;
 
-	}
-	else {
-		free(prev_aux);
-		list->start = prev_aux = NULL;
-	}
+
+	free(aux);
+	aux = NULL;
 
 	list->size--;
 
