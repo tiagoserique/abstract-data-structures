@@ -109,6 +109,7 @@ int listRemoveStart(list_t *list){
 	list_node_t *aux = list->start;
 	list->start = list->start->next;
 	free(aux);
+	aux = NULL;
 
 	list->size--;
 
@@ -166,6 +167,7 @@ int listRemoveElement(list_t *list, int element){
 			list->start = aux->next;
 
 		free(aux);
+		aux = NULL;
 
 		list->size--;
 
