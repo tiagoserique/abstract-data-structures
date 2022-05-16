@@ -18,6 +18,10 @@ int main(){
 
 	testRemoveEnd(list);
 
+	testInsertStart(list);
+
+	testInsertEnd(list);
+
 	testRemoveElement(list);
 
 	// testIsIn(list);
