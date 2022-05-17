@@ -106,5 +106,26 @@ void testRemoveElement(list_t *list){
 void testIsIn(list_t *list){
 	printf("============ listIsIn ============\n");
 
+	if ( listIsIn(list, 20) )
+		printf("The element is in list\n");
+	else
+		printf("The element is not in list\n");
+
+	if ( listIsIn(list, 21) )
+		printf("The element is in list\n");
+	else
+		printf("The element is not in list\n");
+
+	if ( listIsIn(list, 10) )
+		printf("The element is in list\n");
+	else
+		printf("The element is not in list\n");
+
+	if ( listIsIn(list, 22) )
+		printf("The element is in list\n");
+	else
+		printf("The element is not in list\n");
+
+	listPrint(list);
 }
 

@@ -179,6 +179,18 @@ int listRemoveElement(list_t *list, int element){
 
 
 int listIsIn(list_t *list, int element){
+	if ( listEmpty(list) )
+		return 0;
+
+	list_node_t *aux = list->start;
+
+	while( aux != NULL ){
+		if ( aux->value == element )
+			return 1;
+
+		aux = aux->next;
+	}
+
 	return 0;
 }
 
