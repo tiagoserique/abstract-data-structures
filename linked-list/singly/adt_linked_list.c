@@ -196,6 +196,20 @@ int listIsIn(list_t *list, int element){
 
 
 int listClear(list_t *list){
+	if ( listEmpty(list) )
+		return 0;
 
-	return 0;
+	list_node_t *prev_aux = NULL;
+	list_node_t *aux = list->start;
+
+	while( aux != NULL ){
+		prev_aux = aux;
+		aux = aux->next;
+		free(prev_aux);
+	}
+
+	list->start = NULL;
+	list->size = 0;
+
+	return 1;
 }

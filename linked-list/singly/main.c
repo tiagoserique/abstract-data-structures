@@ -26,5 +26,7 @@ int main(){
 
 	testIsIn(list);
 
+	testClear(list);
+
 	return 0;
 }

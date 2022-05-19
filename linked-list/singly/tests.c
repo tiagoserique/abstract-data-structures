@@ -129,3 +129,11 @@ void testIsIn(list_t *list){
 	listPrint(list);
 }
 
+
+void testClear(list_t *list){
+	printf("============ listClear ============\n");
+	
+	listClear(list);
+
+	listPrint(list);
+}

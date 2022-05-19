@@ -13,5 +13,6 @@ void testRemoveStart(list_t *list);
 void testRemoveEnd(list_t *list);
 void testRemoveElement(list_t *list);
 void testIsIn(list_t *list);
+void testClear(list_t *list);
 
 #endif
