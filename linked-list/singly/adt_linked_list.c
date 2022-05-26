@@ -181,16 +181,12 @@ int listRemoveElement(list_t *list, int element){
 	list_node_t *prev_aux = NULL;
 	list_node_t *aux = list->start;
 
-	while( aux->next != NULL ){
-		if ( aux->value == element )
-			break;
-
+	while( aux->next != NULL && aux->value != element ){
 		prev_aux = aux;
 		aux = aux->next;
 	}
 
 	if ( aux->value == element ){
-
 		if ( prev_aux != NULL )
 			prev_aux->next = aux->next;
 		else
