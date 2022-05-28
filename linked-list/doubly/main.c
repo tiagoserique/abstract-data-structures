@@ -10,9 +10,9 @@ int main(){
 
 	testInsertStart(list);
 
-	// testInsertInOrder(list);
-
 	testInsertEnd(list);
+
+	testInsertInOrder(list);
 
 	testRemoveStart(list);
 
