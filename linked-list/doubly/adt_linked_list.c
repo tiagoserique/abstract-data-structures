@@ -4,7 +4,15 @@
 #include "adt_linked_list.h"
 
 
-list_node_t *listCreateNode(int value);
+list_node_t *listCreateNode(int value){
+	list_node_t *node = (list_node_t *)malloc(sizeof(list_node_t));
+
+	node->next = NULL;
+	node->prev = NULL;
+	node->value = value;
+
+	return node;
+}
 
 
 list_t *listCreate();
