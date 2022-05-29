@@ -15,7 +15,14 @@ list_node_t *listCreateNode(int value){
 }
 
 
-list_t *listCreate();
+list_t *listCreate(){
+	list_t *list = (list_t *)malloc(sizeof(list_t));
+
+	list->size = 0;
+	list->start = NULL;
+
+	return list;
+}
 
 
 void listPrint(list_t *list);
