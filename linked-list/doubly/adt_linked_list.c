@@ -25,7 +25,22 @@ list_t *listCreate(){
 }
 
 
-void listPrint(list_t *list);
+void listPrint(list_t *list){
+	if ( listEmpty(list) ){
+		printf("list is empty\n");
+		return;
+	}
+
+	list_node_t *aux = list->start;
+
+	while ( aux != NULL ){
+		printf("%d ", aux->value);
+
+		aux = aux->next;
+	}
+
+	printf("\n");
+}
 
 
 int listEmpty(list_t *list);
