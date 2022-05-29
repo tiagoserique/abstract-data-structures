@@ -56,6 +56,7 @@ int listInsertStart(list_t *list, int element){
 	if ( listEmpty(list) ){
 		list->start = listCreateNode(element);
 		list->size++;
+		
 		return 1;
 	}
 
@@ -76,6 +77,7 @@ int listInsertEnd(list_t *list, int element){
 	if ( listEmpty(list) ){
 		list->start = listCreateNode(element);
 		list->size++;
+		
 		return 1;
 	}
 
@@ -99,6 +101,7 @@ int listInsertInOrder(list_t *list, int element){
 	if ( listEmpty(list) ){
 		list->start = listCreateNode(element);
 		list->size++;
+		
 		return 1;
 	}
 
@@ -135,7 +138,6 @@ int listRemoveStart(list_t *list){
 	if ( listEmpty(list) )
 		return 0;
 
-
 	list_node_t *aux = list->start;
 	list->start = list->start->next;
 	free(aux);
@@ -163,7 +165,6 @@ int listRemoveEnd(list_t *list){
 		prev_aux->next = NULL;
 	else 
 		list->start = NULL;
-
 
 	free(aux);
 	aux = NULL;
