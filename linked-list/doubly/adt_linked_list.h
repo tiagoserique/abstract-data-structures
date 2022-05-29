@@ -20,6 +20,7 @@ struct list_node_t {
 
 struct list_t {
 	list_node_t *start;
+	list_node_t *end;
 	int size;
 };
 
@@ -37,6 +38,10 @@ list_t *listCreate();
 
 // print the list from beginning to end
 void listPrint(list_t *list);
+
+
+// print the list from end to beginning
+void listPrintInvert(list_t *list);
 
 
 // returns 1 if the list is empty and 0 otherwise

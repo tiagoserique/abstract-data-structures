@@ -20,7 +20,8 @@ list_t *listCreate(){
 
 	list->size = 0;
 	list->start = NULL;
-
+	list->end = NULL;
+	
 	return list;
 }
 
@@ -37,6 +38,24 @@ void listPrint(list_t *list){
 		printf("%d ", aux->value);
 
 		aux = aux->next;
+	}
+
+	printf("\n");
+}
+
+
+void listPrintInvert(list_t *list){
+	if ( listEmpty(list) ){
+		printf("list is empty\n");
+		return;
+	}
+
+	list_node_t *aux = list->end;
+
+	while ( aux != NULL ){
+		printf("%d ", aux->value);
+
+		aux = aux->prev;
 	}
 
 	printf("\n");
