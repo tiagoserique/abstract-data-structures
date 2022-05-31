@@ -67,7 +67,9 @@ int listEmpty(list_t *list){
 }
 
 
-int listSize(list_t *list);
+int listSize(list_t *list){
+	return list->size;
+}
 
 
 int listInsertStart(list_t *list, int element);
