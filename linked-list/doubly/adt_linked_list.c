@@ -62,7 +62,9 @@ void listPrintInvert(list_t *list){
 }
 
 
-int listEmpty(list_t *list);
+int listEmpty(list_t *list){
+	return listSize(list) == 0 ? 1 : 0;
+}
 
 
 int listSize(list_t *list);
