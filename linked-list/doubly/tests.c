@@ -17,6 +17,8 @@ void testInsertStart(list_t *list){
 	
 	listInsertStart(list, 13);
 	listPrint(list);
+
+	listPrintInvert(list);
 }
 
 
@@ -34,6 +36,8 @@ void testInsertInOrder(list_t *list){
 	
 	listInsertInOrder(list, 21);
 	listPrint(list);
+
+	listPrintInvert(list);
 }
 
 
@@ -51,6 +55,8 @@ void testInsertEnd(list_t *list){
 	
 	listInsertEnd(list, 23);
 	listPrint(list);
+
+	listPrintInvert(list);
 }
 
 
@@ -65,6 +71,8 @@ void testRemoveStart(list_t *list){
 
 	listRemoveStart(list);
 	listPrint(list);
+
+	listPrintInvert(list);
 }
 
 
@@ -85,6 +93,8 @@ void testRemoveEnd(list_t *list){
 
 	listRemoveEnd(list);
 	listPrint(list);
+
+	listPrintInvert(list);
 }
 
 
@@ -111,6 +121,8 @@ void testRemoveElement(list_t *list){
 
 	listRemoveElement(list, 30);
 	listPrint(list);
+
+	listPrintInvert(list);
 }
 
 
@@ -138,6 +150,8 @@ void testIsIn(list_t *list){
 		printf("The element is not in list\n");
 
 	listPrint(list);
+
+	listPrintInvert(list);
 }
 
 
@@ -147,4 +161,6 @@ void testClear(list_t *list){
 	listClear(list);
 
 	listPrint(list);
+
+	listPrintInvert(list);
 }
