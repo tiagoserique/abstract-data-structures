@@ -28,5 +28,7 @@ int main(){
 
 	testClear(list);
 
+	listDestroy(list);
+
 	return 0;
 }

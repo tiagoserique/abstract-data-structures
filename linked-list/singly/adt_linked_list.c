@@ -240,3 +240,11 @@ int listClear(list_t *list){
 
 	return 1;
 }
+
+
+void listDestroy(list_t *list){
+	listClear(list);
+	free(list);
+
+	return;
+}
