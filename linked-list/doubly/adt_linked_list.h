@@ -90,4 +90,7 @@ int listIsIn(list_t *list, int element);
 int listClear(list_t *list);
 
 
+// destroy the list
+void listDestroy(list_t *list);
+
 #endif
