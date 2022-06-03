@@ -119,7 +119,7 @@ int listRemoveElement(list_t *list, int element){
 }
 
 
-int listIsIn(list_t *list, int element){ // fazer a busca dos dois lados
+int listIsIn(list_t *list, int element){
 	if ( listEmpty(list) )
 		return 0;
 
