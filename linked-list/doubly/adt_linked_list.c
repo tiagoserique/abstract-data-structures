@@ -118,7 +118,44 @@ int listInsertEnd(list_t *list, int element){
 
 
 int listInsertInOrder(list_t *list, int element){
-	return 0;
+	if ( listEmpty(list) ){
+		list->start = listCreateNode(element);
+		list->end = list->start;
+		list->size++;
+		
+		return 1;
+	}
+
+	list_node_t *new_element = listCreateNode(element);
+	if ( !new_element )
+		return 0;
+
+	list_node_t *aux = list->start;
+
+	list->size++;
+
+	while ( aux != list->end && aux->value < element ){
+		aux = aux->next; 
+	}
+	
+	if ( aux->value >= element ){
+		if ( aux->prev == NULL )
+			list->start = new_element;
+		else {
+			new_element->prev = aux->prev;
+			aux->prev->next = new_element;
+		}
+		
+		new_element->next = aux;
+		aux->prev = new_element;
+	}
+	else if ( aux == list->end ){
+		aux->next = new_element;
+		new_element->prev = aux;
+		list->end = new_element;
+	}
+
+	return 1;
 }
 
 
@@ -177,6 +214,7 @@ int listClear(list_t *list){
 
 	return 1;
 }
+
 
 void listDestroy(list_t *list){
 	listClear(list);

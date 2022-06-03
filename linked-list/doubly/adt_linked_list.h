@@ -13,8 +13,8 @@ typedef struct list_t list_t;
 
 struct list_node_t {
 	int value;
-	void *next;
-	void *prev;
+	list_node_t *next;
+	list_node_t *prev;
 };
 
 
