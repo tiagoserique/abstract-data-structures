@@ -13,7 +13,7 @@ typedef struct list_t list_t;
 
 struct list_node_t {
 	int value;
-	void *next;
+	list_node_t *next;
 };
 
 
