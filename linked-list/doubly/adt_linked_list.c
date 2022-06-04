@@ -204,6 +204,53 @@ int listRemoveEnd(list_t *list){
 
 
 int listRemoveElement(list_t *list, int element){
+	if ( listEmpty(list) )
+		return 0;
+
+	list_node_t *aux_start = list->start;
+	list_node_t *aux_end = list->end;
+
+
+	int first_condition  = aux_start->value != element;
+	int second_condition = aux_end->value != element;
+	int third_condition  = aux_start != aux_end;
+	
+	while( first_condition && second_condition && third_condition ){
+		aux_start = aux_start->next;
+		aux_end   = aux_end->prev;
+
+		first_condition  = aux_start->value != element;
+		second_condition = aux_end->value != element;
+		third_condition  = aux_start <= aux_end;
+	}
+
+	if ( aux_start->value == element ){
+		if ( aux_start == list->start )
+			listRemoveStart(list);
+		else {
+			aux_start->prev->next = aux_start->next;
+			aux_start->next->prev = aux_start->prev;
+
+			aux_start->prev = NULL;
+			aux_start->next = NULL;
+			free(aux_start);
+			aux_start = NULL;
+		}
+	}
+	else if ( aux_end->value == element ){
+		if ( aux_end == list->end )
+			listRemoveEnd(list);
+		else {
+			aux_end->prev->next = aux_end->next;
+			aux_end->next->prev = aux_end->prev;
+
+			aux_end->prev = NULL;
+			aux_end->next = NULL;
+			free(aux_end);
+			aux_end = NULL;
+		}
+	}
+
 	return 0;
 }
 
