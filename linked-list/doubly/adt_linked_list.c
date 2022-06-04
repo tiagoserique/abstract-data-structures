@@ -160,7 +160,20 @@ int listInsertInOrder(list_t *list, int element){
 
 
 int listRemoveStart(list_t *list){
-	return 0;
+	if ( listEmpty(list) )
+		return 0;
+
+	list_node_t *aux = list->start;
+	list->start = list->start->next;
+	list->start->prev = NULL;
+	
+	aux->next = NULL;
+	free(aux);
+	aux = NULL;
+
+	list->size--;
+
+	return 1;
 }
 
 
