@@ -178,7 +178,28 @@ int listRemoveStart(list_t *list){
 
 
 int listRemoveEnd(list_t *list){
-	return 0;
+	if ( listEmpty(list) )
+		return 0;
+
+
+	if ( list->start == list->end ){
+		free(list->end);
+		list->start = list->end = NULL;
+
+	}
+	else {
+		list_node_t *aux = list->end;
+		list->end = list->end->prev;
+		list->end->next = NULL; 
+		
+		aux->prev = NULL;
+		free(aux);
+		aux = NULL;
+	}
+
+	list->size--;
+
+	return 1;
 }
 
 
